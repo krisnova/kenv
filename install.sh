@@ -2,6 +2,5 @@
 
 # Install script for git-shortcuts
 
-BASEDIR=$(dirname "$0")
-export PATH=$PATH:$BASEDIR/bin
-echo "export PATH=$PATH:$BASEDIR/bin" >> ~/.bash_profile
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+echo "export PATH=$PATH:$DIR/bin" >> ~/.bash_profile

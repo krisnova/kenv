@@ -1,0 +1,34 @@
+#!/bin/bash
+#
+# Author: Kris Childress
+# kris@nivenly.com
+# 2016
+#
+# Clone Upstream 
+#
+# Will clone a new branch and add a new remote called upstream.
+# Usauge: clone_upstream <repository>
+
+REPO=$1
+
+# Usage
+if [ -z "$REPO" ]; then
+    print "Usage: clone_upstream <repository>"
+    exit 1
+fi
+
+REPO_NAME=${REPO#*:}
+GIT_NAME=${REPO_NAME#*/}
+EXT=".git"
+FEATURE_BRANCH=${GIT_NAME%$EXT}
+
+# Clone
+cd ~/workspace
+git clone $REPO
+
+# Add remote
+cd $FEATURE_BRANCH
+git remote add upstream $REPO
+git fetch upstream
+
+

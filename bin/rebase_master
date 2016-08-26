@@ -1,0 +1,21 @@
+#!/bin/bash
+#
+# Author: Kris Childress
+# kris@nivenly.com
+# 2016
+#
+# Rebase Master
+#
+# Will rebase a feature branch onto master. This script assumes a working remote called "upstream"
+
+FEATURE_BRANCH=$(git rev-parse --symbolic-full-name --abbrev-ref HEAD)
+
+# Rebase
+git fetch upstream
+git checkout master
+git rebase upstream/master
+git push
+git checkout $FEATURE_BRANCH
+git rebase master
+
+

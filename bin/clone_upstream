@@ -7,28 +7,32 @@
 # Clone Upstream 
 #
 # Will clone a new branch and add a new remote called upstream.
-# Usauge: clone_upstream <repository>
+# Usage: clone_upstream <master> <fork>
 
-REPO=$1
+MASTER=$1
+FORK=$2
+
+echo $MASTER
+echo $FORK
 
 # Usage
-if [ -z "$REPO" ]; then
-    print "Usage: clone_upstream <repository>"
+if [ -z "$MASTER" ] || [ -z "$FORK" ]; then
+    echo "Usage: clone_upstream <master> <fork>"
     exit 1
 fi
 
-REPO_NAME=${REPO#*:}
-GIT_NAME=${REPO_NAME#*/}
+MASTER_REPO_NAME=${MASTER#*:}
+MASTER_GIT_NAME=${MASTER_REPO_NAME#*/}
 EXT=".git"
-FEATURE_BRANCH=${GIT_NAME%$EXT}
+FEATURE_BRANCH=${MASTER_GIT_NAME%$EXT}
 
 # Clone
 cd ~/workspace
-git clone $REPO
+git clone $FORK
 
 # Add remote
 cd $FEATURE_BRANCH
-git remote add upstream $REPO
+git remote add upstream $MASTER
 git fetch upstream
 
 

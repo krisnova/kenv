@@ -1,21 +1,28 @@
 #!/usr/bin/env bash
 
-# Always create the data directory
+# Vars
 GSDIR=~/.gitswitch.d
 GITCONFIG=~/.gitconfig
+
+# Build this for good measure
 mkdir -p $GSDIR
 
 usage() {
+    PURPLE='\033[0;35m'
+    NC='\033[0m' # No Color
     echo "gitswitch - Used to switch .gitconfigs for multiple user git usage"
     echo ""
-    echo "gitswitch stash <name>    Will stash the current .gitconfig as <name>"
-    echo "gitswitch list            Will list all available stashed .gitconfigs"
-    echo "gitswitch use   <name>    Will push a stashed .gitconfig to be used"
-    echo "gitswitch new   <name>    Will create a new .gitconfig by a name"
+    printf "gitswitch ${PURPLE}stash${NC}   <name>    Will stash the current .gitconfig as <name>\n"
+    printf "gitswitch ${PURPLE}list${NC}              Will list all available stashed .gitconfigs\n"
+    printf "gitswitch ${PURPLE}use${NC}     <name>    Will push a stashed .gitconfig to be used\n"
+    printf "gitswitch ${PURPLE}new${NC}     <name>    Will create a new .gitconfig by a name\n"
+    printf "gitswitch ${PURPLE}delete${NC}  <name>    Will create a new .gitconfig by a name\n"
+    printf "gitswitch ${PURPLE}show${NC}    <name>    Will show the current .gitconfig\n"
     exit 1
 }
 CMD=$1
 
+# Empty command
 if [ -z "$CMD" ]; then
     usage
 fi
@@ -64,6 +71,27 @@ if [[ "$CMD" = "new" ]]; then
     # $2 is our name
     cp ../doc/.gitconfig $GSDIR/$2
     wemacs $GSDIR/$2
+    exit 0
+fi
+
+#
+#  DELETE
+#
+if [[ "$CMD" = "delete" ]]; then
+    if [ -z "$2" ]; then
+        usage
+    fi
+    # $2 is our name
+    rm -f $GSDIR/$2
+    exit 0
+fi
+
+#
+#  SHOW
+#
+if [[ "$CMD" = "show" ]]; then
+    cat $GITCONFIG
+    echo ""
     exit 0
 fi
 

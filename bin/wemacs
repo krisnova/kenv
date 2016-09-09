@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# Windowed Emacs wrapper
+pwd
+
+/Applications/Emacs.app/Contents/MacOS/Emacs \
+    --chdir . \
+    -bg black \
+    -bd green \
+    -fg green \
+    -name 'Kris Childress (.emacs) - github.com/kris-nova/kenv' \
+    -g 177X40 \
+    "$@" \
+    &

@@ -1,0 +1,74 @@
+#!/usr/bin/env bash
+
+# Always create the data directory
+GSDIR=~/.gitswitch.d
+GITCONFIG=~/.gitconfig
+mkdir -p $GSDIR
+
+usage() {
+    echo "gitswitch - Used to switch .gitconfigs for multiple user git usage"
+    echo ""
+    echo "gitswitch stash <name>    Will stash the current .gitconfig as <name>"
+    echo "gitswitch list            Will list all available stashed .gitconfigs"
+    echo "gitswitch use   <name>    Will push a stashed .gitconfig to be used"
+    echo "gitswitch new   <name>    Will create a new .gitconfig by a name"
+    exit 1
+}
+CMD=$1
+
+if [ -z "$CMD" ]; then
+    usage
+fi
+
+#
+#  LIST
+#
+if [[ "$CMD" = "list" ]]; then
+    echo "Available configs: "
+    ls $GSDIR
+    echo ""
+    exit 0
+fi
+
+#
+#  STASH
+#
+if [[ "$CMD" = "stash" ]]; then
+    if [ -z "$2" ]; then
+        usage
+    fi
+    # $2 is our name
+    cp ~/.gitconfig $GSDIR/$2 && rm $GITCONFIG # Safe move
+    exit 0
+fi
+
+#
+#  USE
+#
+if [[ "$CMD" = "use" ]]; then
+    if [ -z "$2" ]; then
+        usage
+    fi
+    # $2 is our name
+    cp $GSDIR/$2 $GITCONFIG
+    exit 0
+fi
+
+#
+#  NEW
+#
+if [[ "$CMD" = "new" ]]; then
+    if [ -z "$2" ]; then
+        usage
+    fi
+    # $2 is our name
+    cp ../doc/.gitconfig $GSDIR/$2
+    wemacs $GSDIR/$2
+    exit 0
+fi
+
+
+#
+#  FAIL
+#
+usage

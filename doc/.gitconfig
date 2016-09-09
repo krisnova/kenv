@@ -1,0 +1,6 @@
+[user]
+	name = Kris Childress
+	email = kris@nivenly.com
+[core]
+	excludesfile = ~/.gitignore
+	editor = emacs

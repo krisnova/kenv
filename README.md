@@ -1,4 +1,4 @@
-# Bash Shortcuts
+# kenv - Kris' ENVironment
 
 As an engineer I do a lot of very delicate things. I am also super lazy. Here is a place where I store commonly used tools for developing.
 

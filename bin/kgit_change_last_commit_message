@@ -1,0 +1,13 @@
+#!/bin/bash
+#
+# Author: Kris Childress
+# kris@nivenly.com
+# 2016
+#
+# kgit_change_last_commit_message
+#
+# Think of this as ctl+z for commits. It allows a user to magically redo a commit message after it has been pushed.
+
+git commit --amend
+
+echo "You can now push the code"

@@ -4,7 +4,7 @@
 # kris@nivenly.com
 # 2016
 #
-# Rebase Master
+# kgit_rebase
 #
 # Will rebase a feature branch onto master. This script assumes a working remote called "upstream"
 

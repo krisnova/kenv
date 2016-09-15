@@ -1,0 +1,34 @@
+#!/bin/bash
+#
+# Author: Kris Childress
+# kris@nivenly.com
+# 2016
+#
+# kgit_push
+#
+# Just a super lazy way of pushing code and making sure everything looks as expected
+
+PURPLE='\033[0;35m'
+NC='\033[0m' # No Color
+#printf "${PURPLE}text${NC}\n"
+
+# Calculate our values
+BRANCH=`git branch | grep \* | cut -d ' ' -f2`
+REPO=`basename \`git rev-parse --show-toplevel\``
+GITCONFIG=`cat ~/.gitconfig | grep email | xargs`
+COMMITS=``
+
+
+# Start the push
+clear
+printf "${PURPLE}[kgit_push]${NC}\n"
+printf "${PURPLE}Branch     ${NC}${BRANCH}\n"
+printf "${PURPLE}Repository ${NC}${REPO}\n"
+printf "${PURPLE}Gitconfig  ${NC}${GITCONFIG}\n"
+echo ""
+echo ""
+read -p "Press enter to continue.."
+
+# Looks good
+kgit_rebase
+git push --force origin $BRANCH

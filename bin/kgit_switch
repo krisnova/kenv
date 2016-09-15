@@ -1,4 +1,13 @@
 #!/usr/bin/env bash
+#
+# Author: Kris Childress
+# kris@nivenly.com
+# 2016
+#
+# kgit_switch
+#
+# Will rebase a feature branch onto master. This script assumes a working remote called "upstream" that can easily be created with kgit_clone
+
 
 # Vars
 GSDIR=~/.gitswitch.d

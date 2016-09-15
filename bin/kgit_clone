@@ -4,7 +4,7 @@
 # kris@nivenly.com
 # 2016
 #
-# Clone Upstream 
+# kgit_clone
 #
 # Will clone a new branch and add a new remote called upstream.
 # Usage: clone_upstream <master> <fork>
@@ -28,7 +28,7 @@ FEATURE_BRANCH=${MASTER_GIT_NAME%$EXT}
 
 # Clone
 cd ~/workspace
-git clone $FORK
+git clone --recursive -j8 $FORK
 
 # Add remote
 cd $FEATURE_BRANCH

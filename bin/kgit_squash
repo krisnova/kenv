@@ -1,0 +1,24 @@
+#!/bin/bash
+#
+# Author: Kris Childress
+# kris@nivenly.com
+# 2016
+#
+# kgit_squash
+#
+# Will squash commits into a single commit
+
+NUM=$1
+
+if [ -z "$NUM" ]; then
+    echo "Usage: kgit_squash <number_of_commits>"
+    echo ""
+    echo "kgit_squash will squash N number of commits from HEAD into a single commit."
+    exit 1
+fi
+
+git reset --hard HEAD~${NUM}
+git merge --squash HEAD@{1}
+git commit
+
+echo "Squash complete. You may now --force push the change"

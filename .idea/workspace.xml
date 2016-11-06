@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e2e1d0b4-2e12-4318-b2f0-f0231d8ea320" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/emacs.dependencies/go-autocomplete.el" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/kgit_clone" afterPath="$PROJECT_DIR$/bin/kgit_clone" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/emacs.d/init.el" afterPath="$PROJECT_DIR$/emacs.d/init.el" />
     </list>
     <ignored path="kenv.iws" />

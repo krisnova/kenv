@@ -31,7 +31,7 @@
 ;; NeoTree
 (add-to-list 'load-path "/Users/kris/kenv/emacs.dependencies/neotree")
 (require 'neotree)
-(global-set-key (kbd "C-x b") 'neotree-toggle)
+(global-set-key (kbd "C-x p") 'neotree-toggle)
 (setq neo-theme (if window-system 'icons 'arrow))
 
 ;; Go Autocomplete
@@ -48,3 +48,24 @@
 ;; Bash Autocomplete
 (require 'bash-completion)
 
+(split-window-right)
+(neotree-toggle)
+
+
+;; ----------------------------------------------------------------------------------
+;; Emacs Welcome Message
+;; ----------------------------------------------------------------------------------
+(setq initial-scratch-message "
+
+Emacs 24
+
+Kris Nova
+
+---------------------------------
+C-x p             File Browser
+C-x o             Change Window
+M-x term          Terminal
+C-c o             Exit Terminal
+C-x s             Save
+---------------------------------
+")

@@ -28,7 +28,7 @@ FEATURE_BRANCH=${MASTER_GIT_NAME%$EXT}
 
 # Clone
 cd ~/workspace
-git clone --recursive -j8 $FORK
+git clone --recursive $FORK
 
 # Add remote
 cd $FEATURE_BRANCH

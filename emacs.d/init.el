@@ -48,8 +48,11 @@
 ;; Bash Autocomplete
 (require 'bash-completion)
 
-(split-window-right)
-(neotree-toggle)
+
+;; Init options
+(split-window-right) ;; Open with 2 windows
+(neotree-toggle) ;; Open with the NeoTree browser
+(require 'transpose-frame)
 
 
 ;; ----------------------------------------------------------------------------------
@@ -57,11 +60,10 @@
 ;; ----------------------------------------------------------------------------------
 (setq initial-scratch-message "
 
-Emacs 24
-
 Kris Nova
 
 ---------------------------------
+C-x f             Find file
 C-x p             File Browser
 C-x o             Change Window
 M-x term          Terminal

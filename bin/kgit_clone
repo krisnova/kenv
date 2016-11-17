@@ -21,18 +21,35 @@ if [ -z "$MASTER" ] || [ -z "$FORK" ]; then
     exit 1
 fi
 
+# Check for git
+if [[ $MASTER != *"git@"* ]]; then
+    echo "Must use git protocol for kgit"
+fi
+
 MASTER_REPO_NAME=${MASTER#*:}
 MASTER_GIT_NAME=${MASTER_REPO_NAME#*/}
 EXT=".git"
 FEATURE_BRANCH=${MASTER_GIT_NAME%$EXT}
 
+NOGITA=${MASTER#"git@"}
+NOGIT=${NOGITA%$".git"}
+
+# The go import name
+GO_IMPORT=${NOGIT//://}
+
 # Clone
-cd ~/workspace
-git clone --recursive $FORK
+
+git clone --recursive $FORK $GOPATH/src/$GO_IMPORT
 
 # Add remote
-cd $FEATURE_BRANCH
+cd $GOPATH/src/$GO_IMPORT
 git remote add upstream $MASTER
 git fetch upstream
 
+
+echo ""
+echo ""
+echo ""
+echo $GOPATH/src/$GO_IMPORT
+cd $GOPATH/src/$GO_IMPORT
 

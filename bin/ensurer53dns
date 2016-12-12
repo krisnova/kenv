@@ -1,0 +1,29 @@
+#!/bin/bash
+#
+# Author: Kris Childress
+# kris@nivenly.com
+# 2016
+#
+# ensurer53dns
+#
+# Will ensure that one of the nameservers for a hosted zone in AWS Route53 is in your DNS lookup table
+# AWS creds must be configured
+# AWS CLI must exist
+
+# Verify AWS CLI exists
+command -v aws >/dev/null 2>&1 || $(echo "Please install the AWS CLI package with 'brew update && brew install awscli'"; exit 1)
+if [ -z "$1" ]; then
+    echo "Usage: ensurer53dns <hostname>"
+    exit 1
+fi
+HOST=$1
+
+# Probably the worst bash I have written in my life, but gets the job done
+ID=$(aws route53 list-hosted-zones | grep -B 1 \"$HOST | cut -d ":" -f 2 | sed -n '1p' | tr -d '"' | tr -d ','| tr -d ' ')
+
+echo "Populating DNS for ${HOST} from Route 53: ${ID}"
+
+NS=$(aws route53 get-hosted-zone --id /hostedzone/Z9L0MQQIU5I59 | jq '.DelegationSet.NameServers[0]' | tr -d '"')
+IP=$(host ${NS} | cut -d " " -f 4)
+# Assume we are on a mac, and on Wi-Fi
+networksetup -setdnsservers Wi-Fi 8.8.8.8 8.8.4.4 $IP

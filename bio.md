@@ -5,7 +5,7 @@
   Kris Nova has been involved with free and open source software since childhood. While other kids were busy playing kickball, she was spending her free time in Linux IRC channels.
 Open Source Software has been a fundamental part of shaping her as a person and guiding her ways of thinking. 
 
-According to [an article she wrote on diversity](https://www.cncf.io/blog/2016/12/14/diversity-scholarship-series-one-software-engineers-unexpected-cloudnativecon-kubecon-experience) for the [CNCF (Cloud Native Computing Foundation)](https://www.cncf.io/) she shares:
+According to [an article she wrote on diversity](https://www.cncf.io/blog/2016/12/14/diversity-scholarship-series-one-software-engineers-unexpected-cloudnativecon-kubecon-experience) for the [CNCF (Cloud Native Computing Foundation)](https://www.cncf.io/), she shares:
 
 > Open source software has always been an ideology I keep very close to my heart. In fact, open source software is what helped inspire me to come out as a lesbian in my life. To me, open source software has always represented a wonderful world of science, honesty, and learning. A world where mistakes and failure is encouraged, and growing with your peers is a foundational aspect to success.
 

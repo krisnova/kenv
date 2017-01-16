@@ -3,7 +3,7 @@
 ### Open Source From The Beginning
 
   Kris Nova has been involved with free and open source software since childhood. While other kids were busy playing kickball, she was spending her free time in Linux IRC channels.
-Open Source Software has been a fundamental part of shaping her as a person, and guiding her ways of thinking. 
+Open Source Software has been a fundamental part of shaping her as a person and guiding her ways of thinking. 
 
 According to [an article she wrote on diversity](https://www.cncf.io/blog/2016/12/14/diversity-scholarship-series-one-software-engineers-unexpected-cloudnativecon-kubecon-experience) for the [CNCF (Cloud Native Computing Foundation)](https://www.cncf.io/) she shares:
 

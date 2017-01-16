@@ -13,7 +13,7 @@ She has spent time working in many open source communities. From writing [TCP ex
 
 ### Kubernetes
 
-  Kris is one of the 3 core maintainers for [Kubernetes kops](https://github.com/kubernetes/kops#getting-involved), and is cited as being one of the few people with tribal knowledge on running Kubernetes on AWS. Her [article on running production Kubernetes clusters on AWS](https://www.nivenly.com/k8s-aws-private-networking/) was the first of it's kind and offers features never before seen in the community. She coded the back end components of the feature set while attending [KubeCon](http://events.linuxfoundation.org/events/kubecon) in Seattle, Washington 2016. It was merged on mid-conference, and highly discussed the following day.
+  Kris is one of the 3 core maintainers for [Kubernetes kops](https://github.com/kubernetes/kops#getting-involved), and is cited as being one of the few people with tribal knowledge on running Kubernetes on AWS. Her [article on running production Kubernetes clusters on AWS](https://www.nivenly.com/k8s-aws-private-networking/) was the first of it's kind and offers features never before seen in the community. She coded the back end components of the feature set while attending [KubeCon](http://events.linuxfoundation.org/events/kubecon) in Seattle, Washington 2016. It was merged mid-conference, and highly discussed the following day.
   
 Kris also demonstrates leadership as an [organizer for Kubernetes #sig-aws](https://github.com/kubernetes/community/tree/master/sig-aws#organizers) where she leads the community towards driving features in running Kubernetes on AWS. She spends countless hours contributing to the community, and coding in `kops`.
   

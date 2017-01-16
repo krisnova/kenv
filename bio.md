@@ -21,13 +21,13 @@ Kris also demonstrates leadership as an [organizer for Kubernetes #sig-aws](http
 
 Kris has worn a number of infrastructure and operations hats in her years in the professional community. She has spent time working at successful startups, and has professionally focused on `Go`, `Python`, `Scala`, `C`, and object oriented `Java` and `PHP`. Her roles have always included leadership, mentoring, and she has commonly been the face of **back-end** technologies.
 
-In her career she has always displayed exemplary work in software stability, and scalable design. She has worked on many applications, most of which are still in production to this day.
+In her career she has always displayed exemplary work in software stability and scalable design. She has worked on many applications, most of which are still in production to this day.
 
 ### In the eye of the public
 
 Kris is relatively new as a public figure in technology, but has the battle scars and chops to support her ambition. Her history has been filled with overcoming obstacles, and using logic and reason to extinguish any roadblocks in her way. 
 
-She has started focusing on public speaking circa 2017, and has great plans to move more into the space over the coming years.
+She has started focusing on public speaking circa 2017, and has great plans to move more into a public role in the near future.
 
 
 

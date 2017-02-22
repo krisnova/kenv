@@ -14,7 +14,7 @@ FEATURE_BRANCH=$(git rev-parse --symbolic-full-name --abbrev-ref HEAD)
 git fetch upstream
 git checkout master
 git rebase upstream/master
-git push
+git push --force
 git checkout $FEATURE_BRANCH
 git rebase master
 
